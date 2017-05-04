@@ -43,6 +43,7 @@ function fetchUserProfile() {
 		success : function(result) {
 			console.log("successfully fetched User Details");
 			console.log(result);
+			displayUserProfile(result);
 		}
 	});
 }

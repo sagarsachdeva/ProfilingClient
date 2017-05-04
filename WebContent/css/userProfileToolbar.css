@@ -1,0 +1,29 @@
+#userProfileToolbar ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	/* background-color: #333; */
+}
+
+#userProfileToolbar li {
+	float: left;
+	background-color: #bfbfbf;
+	width: 21%;
+	border-style: outset;
+	border-width: 10px;
+	padding: 1%;
+	cursor: pointer;
+}
+
+#userProfileToolbar li a {
+	display: block;
+	color: black;
+	text-align: center;
+	text-decoration: none;
+}
+
+#userProfileToolbar li a:hover {
+	/* background-color: #111; */
+	
+}
