@@ -25,6 +25,12 @@
 	margin-top: -7%;
 }
 
+.userSkillName {
+	width: 25%;
+	font-size: 20px;
+	font-style: oblique;
+}
+
 #profileImg {
 	
 }

@@ -30,7 +30,7 @@ function populateOpenedIssuesCommentsArray(userProfile) {
 			var noOfComments = repoOpenedIssues[j].issue.noOfComments;
 
 			var obj = {};
-			obj["index"] = repoOpenedIssues;
+			obj["index"] = openedIssuesCounter;
 			obj["data"] = noOfComments;
 			openedIssuesCommentsArray.push(obj);
 			openedIssuesCounter++;
@@ -43,7 +43,7 @@ function populateOpenedIssuesCommentsArray(userProfile) {
 			var noOfComments = repoOpenedIssues[j].issue.noOfComments;
 
 			var obj = {};
-			obj["index"] = repoOpenedIssues;
+			obj["index"] = openedIssuesCounter;
 			obj["data"] = noOfComments;
 			openedIssuesCommentsArray.push(obj);
 			openedIssuesCounter++;
@@ -56,7 +56,7 @@ function populateOpenedIssuesCommentsArray(userProfile) {
 			var noOfComments = repoOpenedIssues[j].issue.noOfComments;
 
 			var obj = {};
-			obj["index"] = repoOpenedIssues;
+			obj["index"] = openedIssuesCounter;
 			obj["data"] = noOfComments;
 			openedIssuesCommentsArray.push(obj);
 			openedIssuesCounter++;

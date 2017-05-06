@@ -3,7 +3,8 @@ function displayUserData(userProfile) {
 	fillUserObjectData(userProfile);
 	fillUserOwnedRepositoryData(userProfile);
 	fillUserStarredRepositoryData(userProfile);
-	fillUserOtherRepositoryData(userProfile)
+	fillUserOtherRepositoryData(userProfile);
+	fillUserSkills(userProfile);
 }
 
 function fillUserObjectData(userProfile) {
@@ -117,6 +118,87 @@ function fillUserOtherRepositoryData(userProfile) {
 					+ getMeanCommentLength(issueComments));
 }
 
+function fillUserSkills(userProfile) {
+	var skillsArray = fetchUniqueSkillsArray(userProfile);
+	var counter = 0;
+
+	var skillString = "";
+
+	for (var i = 0; i < skillsArray.length; i++) {
+		if ((i + 1) % 4 == 1) {
+			skillString += "<tr>";
+		}
+
+		skillString += "<td class='userSkillName'><b>" + skillsArray[i]
+				+ "</b></td>";
+
+		if ((i + 1) % 4 == 0) {
+			skillString += "</tr>";
+		}
+
+	}
+
+	$("#userSkillTable").html(skillString);
+}
+
+function fetchUniqueSkillsArray(userProfile) {
+	var skillsArray = new Array();
+
+	var ownedRepos = userProfile.ownedRepositories;
+	var starredRepos = userProfile.ownedRepositories;
+	var otherRepos = userProfile.otherRepositories;
+
+	for (var i = 0; i < ownedRepos.length; i++) {
+		var repoLanguages = ownedRepos[i].repoLanguages;
+		if (typeof repoLanguages === 'undefined')
+			continue;
+
+		for (var j = 0; j < repoLanguages.length; j++) {
+			if (!checkIfArrayContains(skillsArray, repoLanguages[j].name
+					.toLowerCase())) {
+				skillsArray.push(repoLanguages[j].name.toLowerCase());
+			}
+		}
+	}
+
+	for (var i = 0; i < starredRepos.length; i++) {
+		var repoLanguages = starredRepos[i].repoLanguages;
+		if (typeof repoLanguages === 'undefined')
+			continue;
+
+		for (var j = 0; j < repoLanguages.length; j++) {
+			if (!checkIfArrayContains(skillsArray, repoLanguages[j].name
+					.toLowerCase())) {
+				skillsArray.push(repoLanguages[j].name.toLowerCase());
+			}
+		}
+	}
+
+	for (var i = 0; i < otherRepos.length; i++) {
+		var repoLanguages = otherRepos[i].repoLanguages;
+		if (typeof repoLanguages === 'undefined')
+			continue;
+
+		for (var j = 0; j < repoLanguages.length; j++) {
+			if (!checkIfArrayContains(skillsArray, repoLanguages[j].name
+					.toLowerCase())) {
+				skillsArray.push(repoLanguages[j].name.toLowerCase());
+			}
+		}
+	}
+
+	return skillsArray;
+}
+
+function checkIfArrayContains(array, val) {
+
+	for (var i = 0; i < array.length; i++) {
+		if (array[i] == val)
+			return true;
+	}
+	return false;
+}
+
 function getCommits(repos) {
 	var commitsArray = new Array();
 	for (var i = 0; i < repos.length; i++) {
@@ -207,5 +289,4 @@ function findMedianCommitChange(commits) {
 	})
 
 	return commits[Math.floor(commits.length / 2)].commit.linesChanged;
-
 }
