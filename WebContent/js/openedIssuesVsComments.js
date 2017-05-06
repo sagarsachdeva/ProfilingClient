@@ -1,4 +1,5 @@
 function displayOpenedIssuesVsCommentsPlot(userProfile) {
+	$("#openedIssuesVsComments").html("");
 	var openedIssuesCommentsArray = populateOpenedIssuesCommentsArray(userProfile);
 	if (openedIssuesCommentsArray.length == 0) {
 		$("#openedIssuesVsComments").append("<h1>No Data Found</h1>");
@@ -7,7 +8,7 @@ function displayOpenedIssuesVsCommentsPlot(userProfile) {
 
 	drawScatterPlot(openedIssuesCommentsArray, "#openedIssuesVsComments");
 	$("#openedIssuesVsComments").append(
-			"<br><b>No. of Comments</b> : " + openedIssuesCommentsArray.length);
+			"<br><b>No. of Issues</b> : " + openedIssuesCommentsArray.length);
 	$("#openedIssuesVsComments").append(
 			"<br><b>Mean no. of Comments</b> : "
 					+ findMean(openedIssuesCommentsArray));
@@ -27,8 +28,6 @@ function populateOpenedIssuesCommentsArray(userProfile) {
 		var repoOpenedIssues = otherRepos[i].repoOpenedIssues;
 		for (var j = 0; j < repoOpenedIssues.length; j++) {
 			var noOfComments = repoOpenedIssues[j].issue.noOfComments;
-			if (noOfComments == 0)
-				continue;
 
 			var obj = {};
 			obj["index"] = repoOpenedIssues;
@@ -42,8 +41,6 @@ function populateOpenedIssuesCommentsArray(userProfile) {
 		var repoOpenedIssues = ownedRepos[i].repoOpenedIssues;
 		for (var j = 0; j < repoOpenedIssues.length; j++) {
 			var noOfComments = repoOpenedIssues[j].issue.noOfComments;
-			if (noOfComments == 0)
-				continue;
 
 			var obj = {};
 			obj["index"] = repoOpenedIssues;
@@ -57,8 +54,6 @@ function populateOpenedIssuesCommentsArray(userProfile) {
 		var repoOpenedIssues = starredRepos[i].repoOpenedIssues;
 		for (var j = 0; j < repoOpenedIssues.length; j++) {
 			var noOfComments = repoOpenedIssues[j].issue.noOfComments;
-			if (noOfComments == 0)
-				continue;
 
 			var obj = {};
 			obj["index"] = repoOpenedIssues;

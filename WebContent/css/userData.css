@@ -1,0 +1,30 @@
+.userObjDataHeader {
+	background-color: #e2e8f7;
+	padding: 1%;
+	border-width: 1px;
+	border-top-left-radius: 13px;
+	border-top-right-radius: 13px;
+}
+
+.userObjDataContainer {
+	background-color: #b3bdef;
+	border-radius: 13px;
+}
+
+.userObjDataDetails {
+	padding: 1%;
+	margin-top: -1%;
+}
+
+#userObjDataDetailsId {
+	font-size: 22px;
+}
+
+#profileImageId {
+	width: 75%;
+	margin-top: -7%;
+}
+
+#profileImg {
+	
+}

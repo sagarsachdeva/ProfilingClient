@@ -1,4 +1,5 @@
 function displayCommitVsLocPlot(userProfile) {
+	$("#commitVsLOC").html('');
 	var commitLocArray = populateCommitLOCArray(userProfile);
 	if (commitLocArray.length == 0) {
 		$("#commitVsLOC").append("<h1>No Data Found</h1>");
