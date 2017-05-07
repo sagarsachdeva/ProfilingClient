@@ -9,9 +9,11 @@ function displayCommitVsLocPlot(userProfile) {
 	$("#commitVsLOC").append(
 			"<br><b>No. of Comits</b> : " + commitLocArray.length);
 	$("#commitVsLOC").append(
-			"<br><b>Mean Commit Changes</b> : " + findMean(commitLocArray));
+			"<br><b>Mean Commit Changes</b> : " + findMean(commitLocArray)
+					+ " LOC");
 	$("#commitVsLOC").append(
-			"<br><b>Median Commit Changes</b> : " + findMedian(commitLocArray));
+			"<br><b>Median Commit Changes</b> : " + findMedian(commitLocArray)
+					+ " LOC");
 }
 
 function populateCommitLOCArray(userProfile) {
@@ -68,19 +70,19 @@ function populateCommitLOCArray(userProfile) {
 	return commitLocArray;
 }
 
-//function findMean(commitLocArray) {
-//	var sum = 0
-//	for (var i = 0; i < commitLocArray.length; i++) {
-//		sum += commitLocArray[i].data;
-//	}
-//	return (sum / commitLocArray.length);
-//}
+// function findMean(commitLocArray) {
+// var sum = 0
+// for (var i = 0; i < commitLocArray.length; i++) {
+// sum += commitLocArray[i].data;
+// }
+// return (sum / commitLocArray.length);
+// }
 //
-//function findMedian(commitLocArray) {
-//	commitLocArray.sort(function(a, b) {
-//		return a.data - b.data;
-//	});
-//	console.log(commitLocArray);
-//	return commitLocArray[commitLocArray.length / 2].data;
+// function findMedian(commitLocArray) {
+// commitLocArray.sort(function(a, b) {
+// return a.data - b.data;
+// });
+// console.log(commitLocArray);
+// return commitLocArray[commitLocArray.length / 2].data;
 //
-//}
+// }
