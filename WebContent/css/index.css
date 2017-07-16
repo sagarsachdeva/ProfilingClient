@@ -1,0 +1,24 @@
+#mainHeader {
+	margin-bottom: 1%;
+	background-color: #cdcfd4;
+}
+
+#matchMakerHeader {
+	float: left;
+	width: 50%;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	text-align: center;
+	border-style: outset;
+	border-color: #d1d1d8;
+	cursor: pointer;
+}
+
+#userProfileViewerHeader {
+	text-align: center;
+	border-style: outset;
+	border-color: #d1d1d8;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	cursor: pointer;
+}

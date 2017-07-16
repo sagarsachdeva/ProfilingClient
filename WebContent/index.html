@@ -10,12 +10,19 @@
 		<script src="js/scatterPlot.js" type="text/javascript"></script>
 		<script src="js/closedIssuesVsComments.js" type="text/javascript"></script>
 		<script src="js/openedIssuesVsComments.js" type="text/javascript"></script>
+		<script src="js/jobDesc.js" type="text/javascript"></script>
 		
+		<link rel="stylesheet" href="css/index.css">
 		<link rel="stylesheet" href="css/welcome.css">
+		<link rel="stylesheet" href="css/jobDesc.css">
 		<link rel="stylesheet" href="css/userProfileToolbar.css">
 		<link rel="stylesheet" href="css/userData.css">	
 	</head>
 	<body>
+		<div id="mainHeader">
+			<div id="matchMakerHeader" onclick="jobDescPageLoad()">Find Job Description Matches</div>
+			<div id="userProfileViewerHeader" onclick="welcomePageLoad()">View Software Engineer Profiles</div>
+		</div>
 		<div id="pageContent"></div>
 	</body>
 </html>

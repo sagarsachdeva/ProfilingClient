@@ -1,0 +1,49 @@
+.conditionsText {
+	color: red;
+}
+
+#jdHeadingText {
+	
+}
+
+#jobDescTestArea {
+	width: 50%;
+	height: 50%;
+	background-color: #e7ebef;
+	font-size: 13px;
+}
+
+#fetchSEButton {
+	width: 50%;
+	padding-bottom: 0.7%;
+	padding-top: 0.7%;
+	border-style: outset;
+	border-width: 3px;
+	background-color: rgba(108, 113, 113, 0.37);
+	font-size: 13px;
+}
+
+.jdMatchProfile {
+	width: 50%;
+	cursor: pointer;
+}
+
+.matchObjDataDetails {
+	
+}
+
+#jdMatches {
+	background-color: #d1e5ff;
+}
+
+.matchObjectName {
+	font-size: 20px;
+}
+
+.matchObjectUrl {
+	font-size: 20px;
+}
+
+.matchObjectNoOfFollowers {
+	font-size: 20px;
+}

@@ -29,7 +29,11 @@ function populateUsers(result) {
 function fetchUserProfile() {
 	console.log("Fetching User Profile");
 	var selectedVal = $('#usersListSelect').val();
+	$('#userProfileArea').load("userProfile.html");
+	getProfileAndPopulate(selectedVal);
+}
 
+function getProfileAndPopulate(selectedVal) {
 	if (selectedVal == "null") {
 		alert("Please select some value");
 		return;
